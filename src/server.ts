@@ -17,13 +17,6 @@ const app: fastify.FastifyInstance<Server, IncomingMessage, ServerResponse> = fa
 app.register(helmet);
 app.register(fastifyFormbody);
 
-const host = process.env.HOST || (require('../config/url.json')[process.env.NODE_ENV]).host;
-const scheme = process.env.SCHEME || (require('../config/url.json')[process.env.NODE_ENV]).scheme;
-const expose = process.env.NODE_ENV === 'production' ? false : true;
-
-const configs = (require('../config/url.json')[process.env.NODE_ENV]);
-
-
 app.register(fastswagger, {
     exposeRoute: true,
     routePrefix: '/',
@@ -51,7 +44,6 @@ app.register(fastswagger, {
 });
 
 routes(app);
-// socketRoutes(app);
 
 app.listen(+process.env.PORT, '0.0.0.0', (err, address) => {
     if(err){

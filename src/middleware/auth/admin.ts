@@ -14,9 +14,7 @@ export default async function(request: fastify.FastifyRequest, response, next) {
           method: 'POST',
           headers: {
               Authorization: token
-          },
-          ctx: request['ctx']
-  
+          }  
       });
     } catch (e) {
       return response.code(401).send(e);

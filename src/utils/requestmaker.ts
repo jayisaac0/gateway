@@ -6,9 +6,6 @@ dotenv.config({path: __dirname + '/../../.env'});
 const environment = process.env.NODE_ENV;
 const services = (require('../../config/url.json')[environment]).services;
 
-// dotenv.config({path: __dirname + '/../../.env'});
-// const services = (require('../../config/url.json')[process.env.NODE_ENV]).services;
-
 type APIs = 
 | 'auth' ;
 
@@ -24,7 +21,6 @@ export default function({service, action, method, data = '', headers = {} }: Req
     return new Promise( (resolve, reject) => {
         const url = ((services.find((el) => el.name === service )).url) + '/' + action;
        
-        
         axios({
             url: url,
             method: method,
