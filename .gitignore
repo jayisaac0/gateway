@@ -1,0 +1,7 @@
+.vscode
+node_modules
+.env
+src/coverage
+build
+public/*
+!.gitkeep

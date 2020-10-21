@@ -1,0 +1,16 @@
+{
+    "development": {
+        "host": "",
+        "scheme": "http",
+        "services": [
+            { "name": "auth", "url": "http://0.0.0.0:2500/api/v1"}
+        ]
+    },
+    "test":{
+        "host": "",
+        "scheme": "http",
+        "services": [
+            { "name": "auth", "url": "http://0.0.0.0:2500/api/v1"}
+        ]    
+    }
+}
